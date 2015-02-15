@@ -1,0 +1,105 @@
+html, body{
+	overflow-x: hidden; /* prevents horizontal scroll bars */
+	-webkit-tap-highlight-color: rgba(0,0,0,0); /* disable webkit tap highlight */
+	height: 100%; /* fixes focus scrolling in Safari (OS X) */
+}
+
+/* Lists */
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+.entertainment {
+	background-image: url(../img/shine.png), url(../img/entertainment.png);
+	background-color: #F1592A;
+}
+#offlinenotice {
+	padding: 10px;
+	background-color: #98CC00;
+	font-weight: bold;
+	text-align: center;
+}
+
+.learning {
+	background-image: url(../img/shine.png), url(../img/learning.png);
+	background-color: #124B67;
+}
+.motivational {
+	background-image: url(../img/shine.png), url(../img/motivational.png);
+	background-color: #283991;
+}
+.spiritual {
+	background-image: url(../img/shine.png), url(../img/spiritual.png);
+	background-color: #662D91;
+}
+.maintiles div {
+	height: 120px;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: 100% 100%, auto 70%;
+	background-position: left top, center 10px;
+	border-radius: 8px;
+	color: #FFF;
+	text-align: center;
+	line-height: 215px;
+}
+.maintiles td  {
+	width: 50%;
+	padding: 6px;
+}
+.maintiles  {
+	max-width: 500px;
+	width: 98%;
+	margin-bottom: 15px;
+	margin-top: 5px;
+}
+#mainbar {
+	background-color: #000;
+	height: 50px;
+	width: 100%;
+}
+.topbarbutton {
+	font-size: 10px;
+	width: 55px;
+	float: left;
+	color: #FFF;
+	text-align: center;
+	margin-top: 3px;
+}
+
+
+
+/* Container */
+
+#container{
+	position: relative;
+}
+
+/* Menu Button */
+
+.menu-btn{
+	width: 50px;
+	padding: 10px;
+	color: #FFF;
+	text-align: center;
+	cursor: pointer;
+	background-color: #F1592A;
+	background-image: url(../img/menu.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 30px;
+	background-position: center center;
+	margin-top: -50px;
+}
+#actionbar {
+	background-color: #F1592A;
+	width: 100%;
+	height: 50px;
+	left: 0px;
+	top: 0px;
+}
+.menu-btn:hover{
+	background-color: #F37652;
+
+}

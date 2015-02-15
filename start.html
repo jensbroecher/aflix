@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>aflix</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/demo.css">
+        <!-- Pushy CSS -->
+        <link rel="stylesheet" href="css/pushy.css">
+        <link href="css/animate.css" rel="stylesheet" type="text/css">
+        
+        <!-- jQuery -->
+        <script src="js/vendor/jquery-1.10.1.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <!-- Modernizr -->
+        <script src="js/vendor/modernizr.custom.71422.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        
+        <script type="text/javascript" charset="utf-8">
+ 
+    // Call onDeviceReady when Cordova is loaded.
+    //
+    // At this point, the document has loaded but cordova-x.x.x.js has not.
+    // When Cordova is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+        document.addEventListener("online", onOnline, false);
+        document.addEventListener("offline", onOffline, false);
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+ 
+    // Cordova is loaded and it is now safe to make calls Cordova methods
+    //
+    function onDeviceReady() {
+		
+    }
+ 
+    // Handle the online event
+    //
+    function onOnline() {
+		document.getElementById('offlinenotice').className = 'animated fadeOutUp';
+        setTimeout(function(){document.getElementById('offlinenotice').style.display='none';},1000);
+    }
+ 
+    function onOffline() {
+        document.getElementById('offlinenotice').style.display='block';
+		document.getElementById('offlinenotice').className = 'animated fadeInDown';
+    }
+        
+    </script>
+    
+    <script type="text/javascript">
+
+/***********************************************
+* Dynamic Ajax Content- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+var loadedobjects=""
+var rootdomain="http://"+window.location.hostname
+
+function ajaxpage(url, containerid){
+var page_request = false
+if (window.XMLHttpRequest) // if Mozilla, Safari etc
+page_request = new XMLHttpRequest()
+else if (window.ActiveXObject){ // if IE
+try {
+page_request = new ActiveXObject("Msxml2.XMLHTTP")
+} 
+catch (e){
+try{
+page_request = new ActiveXObject("Microsoft.XMLHTTP")
+}
+catch (e){}
+}
+}
+else
+return false
+page_request.onreadystatechange=function(){
+loadpage(page_request, containerid)
+}
+page_request.open('GET', url, true)
+page_request.send(null)
+}
+
+function loadpage(page_request, containerid){
+if (page_request.readyState == 4 && (page_request.status==200 || window.location.href.indexOf("http")==-1))
+document.getElementById(containerid).innerHTML=page_request.responseText
+}
+
+function loadobjs(){
+if (!document.getElementById)
+return
+for (i=0; i<arguments.length; i++){
+var file=arguments[i]
+var fileref=""
+if (loadedobjects.indexOf(file)==-1){ //Check to see if this object has not already been added to page before proceeding
+if (file.indexOf(".js")!=-1){ //If object is a js file
+fileref=document.createElement('script')
+fileref.setAttribute("type","text/javascript");
+fileref.setAttribute("src", file);
+}
+else if (file.indexOf(".css")!=-1){ //If object is a css file
+fileref=document.createElement("link")
+fileref.setAttribute("rel", "stylesheet");
+fileref.setAttribute("type", "text/css");
+fileref.setAttribute("href", file);
+}
+}
+if (fileref!=""){
+document.getElementsByTagName("head").item(0).appendChild(fileref)
+loadedobjects+=file+" " //Remember this object as being already added to page
+}
+}
+}
+
+</script>
+
+    </head>
+    <body onload="onLoad()">
+    
+    <div onClick="document.getElementById('offlinenotice').style.display='none';" style="display:none" id="offlinenotice">You are offline. aflix requires<br>
+ an active internet connection.</div>
+    
+    <div id="mainbar" class="animated fadeInRight">
+    <img src="img/logo_on_dark.png" height="50">
+    <div style="float:right">
+    
+    <div class="topbarbutton">
+    <img src="img/help.png" height="30">
+    <div>Help</div>
+    </div>
+    
+    <div onClick="alert('Sorry, this feature is not available yet')" class="topbarbutton">
+    <img src="img/playlist.png" height="30">
+    <div>Playlist</div>
+    </div>
+    
+    <div class="topbarbutton">
+    <img src="img/search.png" height="30">
+    <div>Search</div>
+    </div>
+    
+    </div>
+    </div>
+    
+    <!-- Pushy Menu -->
+    
+        <nav class="pushy pushy-left">
+            <ul>
+                <li><a href="#"><img src="img/home.png" align="absmiddle" width="30px;" style="padding-right:15px;">What's new?</a></li>
+                <li><a href="#"><img src="img/entertainment.png" align="absmiddle" width="30px;" style="padding-right:15px;">Entertainment</a></li>
+                <li><a href="#"><img src="img/learning.png" align="absmiddle" width="30px;" style="padding-right:15px;">Learning</a></li>
+                <li><a href="#"><img src="img/motivational.png" align="absmiddle" width="30px;" style="padding-right:15px;">Motivational</a></li>
+                <li><a href="#"><img src="img/spiritual.png" align="absmiddle" width="30px;" style="padding-right:15px;">Spiritual</a></li>
+                <li><a href="javascript:ajaxpage('external.htm', 'rightcolumn');"><img src="img/gear.gif" align="absmiddle" width="30px;" style="padding-right:15px;">Settings</a></li>
+            </ul>
+        </nav>
+      
+
+        <div class="site-overlay"></div>
+        
+<div id="actionbar" class="animated fadeInLeft" style="display:none"></div>
+
+<div id="container">
+
+<div id="menu-btn" class="menu-btn animated fadeInLeft" style="display:none"></div>
+
+<div id="cameramain" class="animated fadeInUp" style="background-color:#000; text-align:center; margin-top:4px;">
+ <img src="img/camera.jpg" width="100%" style="max-width:600px;" >
+</div>
+
+<table border="0" align="center" class="maintiles" id="mainitems">
+  <tr>
+    <td>
+    <div class="entertainment animated fadeInUp" style="-webkit-animation-delay:0.5s;" onClick="document.getElementById('mainitems').className = 'maintiles animated bounceOut';document.getElementById('actionbar').style.display='block';document.getElementById('menu-btn').style.display='block';document.getElementById('cameramain').className = 'animated bounceOut';setTimeout(function(){document.getElementById('cameramain').style.display='none';},1000);">Entertainment</div>
+
+    </td>
+    <td>
+    <div class="learning animated fadeInUp" style="-webkit-animation-delay:0.7s;" onClick="document.getElementById('mainitems').className = 'maintiles animated bounceOut';document.getElementById('actionbar').style.display='block';document.getElementById('menu-btn').style.display='block';document.getElementById('cameramain').className = 'animated bounceOut';setTimeout(function(){document.getElementById('cameramain').style.display='none';},1000);">Learning</div>
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+   <div class="motivational animated fadeInUp" style="-webkit-animation-delay:0.9s;" onClick="document.getElementById('mainitems').className = 'maintiles animated bounceOut';document.getElementById('actionbar').style.display='block';document.getElementById('menu-btn').style.display='block';document.getElementById('cameramain').className = 'animated bounceOut';setTimeout(function(){document.getElementById('cameramain').style.display='none';},1000);">Motivational</div>
+ 
+    </td>
+    <td>
+  <div class="spiritual animated fadeInUp" style="-webkit-animation-delay:1.1s;" onClick="document.getElementById('mainitems').className = 'maintiles animated bounceOut';document.getElementById('actionbar').style.display='block';document.getElementById('menu-btn').style.display='block';document.getElementById('cameramain').className = 'animated bounceOut';setTimeout(function(){document.getElementById('cameramain').style.display='none';},1000);">Spiritual</div>
+  
+    </td>
+  </tr>
+</table>
+
+</div>
+
+<div id="rightcolumn"><h3>Choose a page to load.</h3></div>
+
+        <!-- Pushy JS -->
+        <script src="js/pushy.min.js"></script>
+
+    </body>
+</html>
